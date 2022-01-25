@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        span {
+            color: red;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Better than average</h1>
+
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Broj indeksa</th>
+                <th>Ime i prezime</th>
+                <th>Godina rodjenja</th>
+                <th>Sifra</th>
+                <th>Prosek</th>
+                <th>Polozeni ispiti</th>
+            </tr>
+    
+            {% for k in korisnici %}
+            <tr>
+                <td>{{ k.get_indeks() }}</td>
+                <td>{{ k.get_ime_prezime() }}</td>
+                <td>{{ k.get_godina() }}</td>
+                <td>{{ k.get_password() }}</td>
+                <td>{{ k.get_prosek() }}</td>
+                <td>{{ k.get_ispiti() }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
